@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kejutan Hadiah untukmu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8e1f4; /* Warna latar belakang lembut */
+            text-align: center;
+            overflow: hidden;
+        }
+        header {
+            background: #ff99cc; /* Aksen pink */
+            color: #333;
+            padding: 20px;
+        }
+        .button {
+            background: #ff3366; /* Tombol dengan warna merah muda */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin: 20px;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #ff0055; /* Warna tombol saat hover */
+        }
+        .heart {
+            display: none;
+            font-size: 100px;
+            color: red;
+            animation: heartbeat 1s infinite;
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        .rose {
+            display: none;
+            font-size: 100px;
+            color: pink;
+            animation: grow 1s forwards;
+        }
+        @keyframes grow {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .message {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+            color: #ff3366; /* Warna pesan */
+        }
+        .final-message {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+            color: #ff3366; /* Warna pesan akhir */
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Kejutan Hadiah untukmu yang Cantik!!</h1>
+</header>
+
+<div id="mainContent">
+    <button class="button" id="surpriseButton" onclick="showHeart()">Kejutan!!!</button>
+    <div id="heartContainer" class="heart">❤️</div>
+    <div id="choiceButtons" style="display:none;">
+        <button class="button" id="continueButton" onclick="showRose()">Lanjut</button>
+        <button class="button" id="noButton" onclick="showBrokenHeart()">Tidak</button>
+    </div>
+    <div id="roseContainer" class="rose">🌹</div>
+    <div id="brokenHeartContainer" class="heart">💔</div>
+    <div id="finalMessage" class="final-message">Apapun yang kamu pilih di games hari ini aku harap kamu bahagia selalu cantik ku 😍</div>
+    <button class="button" id="finishButton" style="display:none;" onclick="finish()">Selesai</button>
+</div>
+
+<script>
+    function showHeart() {
+        document.getElementById('heartContainer').style.display = 'block';
+        document.getElementById('surpriseButton').style.display = 'none';
+        document.getElementById('choiceButtons').style.display = 'block';
+    }
+
+    function showRose() {
+        document.getElementById('roseContainer').style.display = 'block';
+        document.getElementById('continueButton').style.display = 'none';
+        document.getElementById('noButton').style.display = 'none';
+        document.getElementById('finishButton').style.display = 'block';
+    }
+
+    function showBrokenHeart() {
+        document.getElementById('brokenHeartContainer').style.display = 'block';
+        document.getElementById('continueButton').style.display = 'none';
+        document.getElementById('noButton').style.display = 'none';
+        document.getElementById('finishButton').style.display = 'block';
+    }
+
+    function finish() {
+        document.getElementById('finalMessage').style.display = 'block';
+        document.getElementById('finishButton').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
